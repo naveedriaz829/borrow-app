@@ -1,0 +1,254 @@
+{
+  "common": {
+    "loading": "One Moment...",
+    "loader": {
+      "borrowing": "Borrowing...",
+      "repaying": "Repaying...",
+      "depositing": "Depositing...",
+      "withdrawing": "Withdrawing..."
+    }
+  },
+  "language": {
+    "title": "Select Your Language"
+  },
+  "dashboard": {
+    "positionHealth": {
+      "title": "Position Health"
+    },
+    "borrow": {
+      "title": "Borrow",
+      "borrowed": "Borrowed",
+      "borrowMore": "Borrow More Up To",
+      "max": "+ Max",
+      "repay": "Repay",
+      "upTo": "Up To",
+      "more": "More",
+      "currency": {
+        "usd": "USD",
+        "wld": "WLD"
+      }
+    },
+    "collateral": {
+      "title": "Collateral",
+      "healthScore": "Health Score",
+      "deposit": "Deposit",
+      "withdraw": "Withdraw",
+      "currency": {
+        "wld": "WLD"
+      }
+    }
+  },
+  "borrow": {
+    "title": "How many dollars would you like to borrow?",
+    "amount": {
+      "tooHigh": "Amount too high",
+      "insufficient": "Insufficient Amount",
+      "other": "Other Amount",
+      "borrow": "Borrow $"
+    },
+    "review": {
+      "confirming": "Confirming...",
+      "borrow": "Swipe to Borrow"
+    },
+    "wallet": {
+      "connect": "Please connect your wallet"
+    }
+  },
+  "repay": {
+    "title": "How many dollars would you like to repay?",
+    "amount": {
+      "insufficient": "Insufficient Amount",
+      "exceedBorrowed": "Exceed Borrowed",
+      "exceedBalance": "Amount Exceeds Balance",
+      "repay": "Repay $",
+      "other": "Other Amount"
+    },
+    "review": {
+      "repay": "Swipe to Repay"
+    },
+    "card": {
+      "borrowedAmount": "Borrowed Amount",
+      "max": "+ Max",
+      "available": "Available"
+    }
+  },
+  "collateral": {
+    "title": "Collateral",
+    "intro": "Cryptocurrency lending has become a popular way for you to access liquidity without selling your digital assets. By using your WLD as collateral, you can secure loans in traditional currencies such as USD. Here's a breakdown of how this process works:",
+    "collateralization": {
+      "title": "Collateralization",
+      "description": "When you opt for a crypto-backed loan, you pledge a certain amount of your cryptocurrency as collateral. The amount you can borrow is typically determined by the Loan-to-Value (LTV) ratio set by the lending platform. For instance, with an LTV of 50%, if you provide $10,000 worth of WLD, you can borrow $5,000 in USD. It's important to note that due to the volatile nature of cryptocurrencies, these loans are often over-collateralized to mitigate risk."
+    },
+    "interestRates": {
+      "title": "Interest Rates and Loan Terms",
+      "description": "Interest rates for crypto-backed loans can vary based on the platform and prevailing market conditions. Some platforms offer rates as low as 0%, while others may charge higher rates depending on the LTV and the specific cryptocurrency used as collateral. Loan terms are generally flexible, allowing borrowers to choose durations that suit their financial needs."
+    },
+    "marginCalls": {
+      "title": "Margin Calls and Liquidation Risks",
+      "description": "One crucial aspect to be aware of is the risk of margin calls. If the value of your collateral decreases significantly due to market fluctuations, the platform may require you to add more collateral to maintain the agreed LTV ratio. Failure to do so could result in the liquidation of your assets to cover the loan. Therefore, it's essential to monitor the value of your collateral and be prepared to act if necessary."
+    },
+    "platformSelection": {
+      "title": "Platform Selection and Supported Assets",
+      "description": "Not all lending platforms accept every cryptocurrency as collateral. While major assets like Bitcoin and Ethereum are widely accepted, others, such as WorldCoin, may not be supported. It's crucial to research and choose a reputable platform that aligns with your specific needs and accepts your preferred cryptocurrency."
+    },
+    "taxImplications": {
+      "title": "Tax Implications",
+      "description": "Using cryptocurrency as collateral for a loan is generally not considered a taxable event since you're not selling the asset. However, if your collateral is liquidated to cover a margin call, it could trigger capital gains or losses. It's advisable to consult with a tax professional to understand the potential implications fully."
+    },
+    "summary": "In summary, crypto-backed loans offer a way to access funds without parting with your digital assets. However, it's essential to understand the terms, risks, and platform specifics before proceeding. Always conduct thorough research and consider consulting financial advisors to ensure this approach aligns with your financial goals."
+  },
+  "positionHealth": {
+    "title": "Position Health",
+    "intro": "Position health measures the security of your loan based on the value of your collateral. Crypto prices fluctuate, so keeping your position healthy helps avoid margin calls or liquidation.",
+    "categories": {
+      "title": "Position Health Categories",
+      "good": {
+        "title": "Good (Safe Zone)",
+        "description": "Your collateral comfortably covers your loan. No immediate action needed, but keep monitoring."
+      },
+      "medium": {
+        "title": "Medium (Caution Zone)",
+        "description": "Your collateral is approaching a critical level. Consider adding collateral or repaying part of the loan to stay safe."
+      },
+      "low": {
+        "title": "Low (At Risk)",
+        "description": "Your position is close to liquidation. Add collateral or repay immediately to avoid losing funds."
+      }
+    },
+    "maintenance": {
+      "title": "How to Maintain a Healthy Position",
+      "tips": [
+        "Monitor price trends and set alerts.",
+        "Avoid borrowing too close to your liquidation threshold.",
+        "Keep extra collateral ready in case of market drops."
+      ]
+    },
+    "conclusion": "Staying proactive with your position health ensures better risk management and prevents unexpected losses. Want to calculate your risk level? Use our Position Health Tool in the app!",
+    "indicator": {
+      "noLoans": "You have no outstanding loans.",
+      "status": {
+        "low": "Low",
+        "medium": "Medium",
+        "good": "Good"
+      }
+    }
+  },
+  "review": {
+    "title": "Review",
+    "about": {
+      "youAreAbout": "You are about",
+      "toBorrow": "to borrow",
+      "toRepay": "to repay",
+      "byUsing": "by using",
+      "asCollateral": "as additional collateral"
+    },
+    "loading": "Loading...",
+    "apy": "APY",
+    "modal": {
+      "title": "Review",
+      "description": {
+        "withdraw": "Swipe below to withdraw {{amount}} WLD of collateral.",
+        "deposit": "Your deposit will be used as collateral to increase your Position Health."
+      },
+      "transaction": {
+        "from": "From",
+        "to": "To",
+        "myWallet": "My Wallet",
+        "wldLending": "WLD Lending"
+      },
+      "network": {
+        "title": "Network",
+        "worldChain": "World Chain"
+      },
+      "fees": {
+        "title": "Fees",
+        "withdrawal": "Withdrawal Fees",
+        "amount": "0.00 WLD"
+      },
+      "total": {
+        "title": "Total to Receive",
+        "amount": "{{amount}} WLD",
+        "usd": "{{amount}} USD"
+      },
+      "action": {
+        "withdraw": "Withdraw",
+        "deposit": "Deposit"
+      }
+    }
+  },
+  "withdraw": {
+    "title": "Withdraw Collateral",
+    "amount": {
+      "withdraw": "Withdraw",
+      "review": "Review"
+    },
+    "error": {
+      "insufficientCollateral": {
+        "title": "Insufficient Collateral",
+        "message": "Please deposit more collateral."
+      },
+      "insufficientWithdrawal": {
+        "title": "Insufficient Withdrawal",
+        "message": "Increase withdrawal amount."
+      }
+    },
+    "page": {
+      "from": "WLD Lending",
+      "to": "To My Wallet",
+      "status": {
+        "pending": "Withdrawal Pending",
+        "failed": "Withdrawal Failed",
+        "success": "Withdrawal Success"
+      },
+      "currency": "WORLD",
+      "transaction": {
+        "id": "Transaction ID",
+        "copy": "Click to copy",
+        "noHash": "No transaction hash",
+        "viewDetails": "View Details on WorldScan"
+      },
+      "actions": {
+        "tryAgain": "Try Again",
+        "viewPosition": "View My Position Health"
+      }
+    }
+  },
+  "deposit": {
+    "title": "Deposit Collateral",
+    "amount": {
+      "available": "Available",
+      "deposit": "Deposit",
+      "review": "Review"
+    },
+    "error": {
+      "insufficientBalance": {
+        "title": "Insufficient Balance",
+        "message": "Your WLD balance is not enough."
+      },
+      "invalidAmount": {
+        "title": "Invalid Amount",
+        "message": "Please enter a valid amount."
+      }
+    },
+    "page": {
+      "from": "From My Wallet",
+      "to": "WLD Lending",
+      "status": {
+        "pending": "Deposit Pending",
+        "failed": "Deposit Failed",
+        "success": "Deposit Success"
+      },
+      "currency": "WORLD",
+      "transaction": {
+        "id": "Transaction ID",
+        "copy": "Click to copy",
+        "noHash": "No transaction hash",
+        "viewDetails": "View Details on WorldScan"
+      },
+      "actions": {
+        "tryAgain": "Try Again",
+        "viewPosition": "View My Position Health"
+      }
+    }
+  }
+} 

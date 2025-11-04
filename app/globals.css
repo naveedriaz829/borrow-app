@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "PolySans";
+  src: url("https://kresusdev.wpengine.com/wp-content/themes/kresus-child/fonts/PolySansGX.woff2") format("woff2"),
+       url("https://kresusdev.wpengine.com/wp-content/themes/kresus-child/fonts/PolySansGX.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PolySans";
+  src: url("https://kresusdev.wpengine.com/wp-content/themes/kresus-child/fonts/PolySansItalicGX.woff2") format("woff2"),
+       url("https://kresusdev.wpengine.com/wp-content/themes/kresus-child/fonts/PolySansItalicGX.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  
+  /* Custom colors */
+  --color-secondary-white: #F2F2F7;
+  --color-secondary-gray: #AEAEB2;
+  --color-dash-gray: #161616;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: "PolySans", sans-serif;
+}
+
+.diamond-list {
+  list-style-image: url('/bulletpoints/diamond.svg');
+}
+
+
+.homepage-background {
+  background: black;
+  background-image: 
+    radial-gradient(circle at bottom right, #7654FE54, transparent 50%),
+    radial-gradient(circle at top left, #0A6DE154, transparent 50%);
+}
+
+.bg-theme-1 {
+  background: linear-gradient(to bottom right, #5D07B7, #131DBB, #073BC3);
+}
+
+.bg-theme-2 {
+  background: linear-gradient(to bottom right, #4B0792, #0E1696, #0734A9);
+}
+
+.bg-guage {
+  background: linear-gradient(to bottom right, #9B3CFF, #2D67FF);
+}
+
+
+
+
+.no-scroll {
+  touch-action: none;
+  overflow: hidden;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Color Classes */
+.secondary-white {
+  color: #F2F2F7;
+}
+
+.secondary-gray {
+  color: #AEAEB2;
+}
+
+.dash-gray {
+  color: #161616;
+}
+
+/* Background Color Classes */
+.bg-secondary-white {
+  background-color: #F2F2F7;
+}
+
+.bg-secondary-gray {
+  background-color: #AEAEB2;
+}
+
+.bg-dash-gray {
+  background-color: #161616;
+}

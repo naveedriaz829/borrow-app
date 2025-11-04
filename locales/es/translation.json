@@ -1,0 +1,254 @@
+{
+  "common": {
+    "loading": "Un momento...",
+    "loader": {
+      "borrowing": "Pidiendo prestado...",
+      "repaying": "Reembolsando...",
+      "depositing": "Depositando...",
+      "withdrawing": "Retirando..."
+    }
+  },
+  "language": {
+    "title": "Selecciona tu idioma"
+  },
+  "dashboard": {
+    "positionHealth": {
+      "title": "Salud de la Posición"
+    },
+    "borrow": {
+      "title": "Pedir Prestado",
+      "borrowed": "Prestado",
+      "borrowMore": "Pedir Más Hasta",
+      "max": "+ Máx",
+      "repay": "Reembolsar",
+      "upTo": "hasta",
+      "more": "",
+      "currency": {
+        "usd": "USD",
+        "wld": "WLD"
+      }
+    },
+    "collateral": {
+      "title": "Colateral",
+      "healthScore": "Puntaje de Salud",
+      "deposit": "Depositar",
+      "withdraw": "Retirar",
+      "currency": {
+        "wld": "WLD"
+      }
+    }
+  },
+  "borrow": {
+    "title": "¿Cuántos dólares te gustaría pedir prestados?",
+    "amount": {
+      "tooHigh": "Monto demasiado alto",
+      "insufficient": "Monto insuficiente",
+      "other": "Otro monto",
+      "borrow": "Pedir prestado $"
+    },
+    "review": {
+      "confirming": "Confirmando...",
+      "borrow": "Desliza para Pedir Prestado"
+    },
+    "wallet": {
+      "connect": "Por favor conecta tu billetera"
+    }
+  },
+  "repay": {
+    "title": "¿Cuántos dólares te gustaría reembolsar?",
+    "amount": {
+      "insufficient": "Monto insuficiente",
+      "exceedBorrowed": "Excede lo prestado",
+      "exceedBalance": "Monto excede el saldo",
+      "repay": "Reembolsar $",
+      "other": "Otro monto"
+    },
+    "review": {
+      "repay": "Desliza para Reembolsar"
+    },
+    "card": {
+      "borrowedAmount": "Monto Prestado",
+      "max": "+ Máx",
+      "available": "Disponible"
+    }
+  },
+  "collateral": {
+    "title": "Colateral",
+    "intro": "Los préstamos con criptomonedas se han convertido en una forma popular de acceder a liquidez sin vender tus activos digitales. Al usar tu WLD como colateral, puedes obtener préstamos en monedas tradicionales como USD. Aquí te explicamos cómo funciona este proceso:",
+    "collateralization": {
+      "title": "Colateralización",
+      "description": "Cuando optas por un préstamo respaldado por criptomonedas, comprometes una cierta cantidad de tu criptomoneda como colateral. La cantidad que puedes pedir prestada generalmente está determinada por la relación Préstamo-Valor (LTV) establecida por la plataforma de préstamos. Por ejemplo, con un LTV del 50%, si proporcionas $10,000 en WLD, puedes pedir prestado $5,000 en USD. Es importante tener en cuenta que, debido a la naturaleza volátil de las criptomonedas, estos préstamos suelen estar sobre-colateralizados para mitigar el riesgo."
+    },
+    "interestRates": {
+      "title": "Tasas de Interés y Términos del Préstamo",
+      "description": "Las tasas de interés para préstamos respaldados por criptomonedas pueden variar según la plataforma y las condiciones del mercado. Algunas plataformas ofrecen tasas tan bajas como 0%, mientras que otras pueden cobrar tasas más altas dependiendo del LTV y la criptomoneda específica utilizada como colateral. Los términos del préstamo son generalmente flexibles, permitiendo a los prestatarios elegir duraciones que se adapten a sus necesidades financieras."
+    },
+    "marginCalls": {
+      "title": "Llamadas de Margen y Riesgos de Liquidación",
+      "description": "Un aspecto crucial a tener en cuenta es el riesgo de llamadas de margen. Si el valor de tu colateral disminuye significativamente debido a las fluctuaciones del mercado, la plataforma puede requerir que agregues más colateral para mantener la relación LTV acordada. Si no lo haces, podría resultar en la liquidación de tus activos para cubrir el préstamo. Por lo tanto, es esencial monitorear el valor de tu colateral y estar preparado para actuar si es necesario."
+    },
+    "platformSelection": {
+      "title": "Selección de Plataforma y Activos Soportados",
+      "description": "No todas las plataformas de préstamos aceptan todas las criptomonedas como colateral. Si bien los activos principales como Bitcoin y Ethereum son ampliamente aceptados, otros, como WorldCoin, pueden no ser compatibles. Es crucial investigar y elegir una plataforma confiable que se alinee con tus necesidades específicas y acepte tu criptomoneda preferida."
+    },
+    "taxImplications": {
+      "title": "Implicaciones Fiscales",
+      "description": "Usar criptomonedas como colateral para un préstamo generalmente no se considera un evento imponible ya que no estás vendiendo el activo. Sin embargo, si tu colateral se liquida para cubrir una llamada de margen, podría desencadenar ganancias o pérdidas de capital. Es recomendable consultar con un profesional fiscal para entender completamente las posibles implicaciones."
+    },
+    "summary": "En resumen, los préstamos respaldados por criptomonedas ofrecen una forma de acceder a fondos sin desprenderse de tus activos digitales. Sin embargo, es esencial entender los términos, riesgos y especificaciones de la plataforma antes de proceder. Siempre realiza una investigación exhaustiva y considera consultar con asesores financieros para asegurarte de que este enfoque se alinee con tus objetivos financieros."
+  },
+  "positionHealth": {
+    "title": "Salud de la Posición",
+    "intro": "La salud de la posición mide la seguridad de tu préstamo basada en el valor de tu colateral. Los precios de las criptomonedas fluctúan, por lo que mantener tu posición saludable ayuda a evitar llamadas de margen o liquidación.",
+    "categories": {
+      "title": "Categorías de Salud de la Posición",
+      "good": {
+        "title": "Buena (Zona Segura)",
+        "description": "Tu colateral cubre cómodamente tu préstamo. No se necesita acción inmediata, pero mantén el monitoreo."
+      },
+      "medium": {
+        "title": "Media (Zona de Precaución)",
+        "description": "Tu colateral se está acercando a un nivel crítico. Considera agregar colateral o pagar parte del préstamo para mantenerte seguro."
+      },
+      "low": {
+        "title": "Baja (En Riesgo)",
+        "description": "Tu posición está cerca de la liquidación. Agrega colateral o paga inmediatamente para evitar perder fondos."
+      }
+    },
+    "maintenance": {
+      "title": "Cómo Mantener una Posición Saludable",
+      "tips": [
+        "Monitorea las tendencias de precios y configura alertas.",
+        "Evita pedir prestado demasiado cerca de tu umbral de liquidación.",
+        "Mantén colateral extra listo en caso de caídas del mercado."
+      ]
+    },
+    "conclusion": "Mantenerse proactivo con la salud de tu posición asegura un mejor manejo de riesgos y previene pérdidas inesperadas. ¿Quieres calcular tu nivel de riesgo? ¡Usa nuestra Herramienta de Salud de Posición en la aplicación!",
+    "indicator": {
+      "noLoans": "No tienes préstamos pendientes.",
+      "status": {
+        "low": "Baja",
+        "medium": "Media",
+        "good": "Buena"
+      }
+    }
+  },
+  "review": {
+    "title": "Revisar",
+    "about": {
+      "youAreAbout": "Estás por",
+      "toBorrow": "pedir prestado",
+      "toRepay": "reembolsar",
+      "byUsing": "usando",
+      "asCollateral": "como colateral adicional"
+    },
+    "loading": "Cargando...",
+    "apy": "APY",
+    "modal": {
+      "title": "Revisar",
+      "description": {
+        "withdraw": "Desliza abajo para retirar {{amount}} WLD de colateral.",
+        "deposit": "Tu depósito se usará como colateral para aumentar tu Salud de Posición."
+      },
+      "transaction": {
+        "from": "Desde",
+        "to": "Hasta",
+        "myWallet": "Mi Billetera",
+        "wldLending": "Préstamos WLD"
+      },
+      "network": {
+        "title": "Red",
+        "worldChain": "World Chain"
+      },
+      "fees": {
+        "title": "Comisiones",
+        "withdrawal": "Comisión de Retiro",
+        "amount": "0.00 WLD"
+      },
+      "total": {
+        "title": "Total a Recibir",
+        "amount": "{{amount}} WLD",
+        "usd": "{{amount}} USD"
+      },
+      "action": {
+        "withdraw": "Retirar",
+        "deposit": "Depósito"
+      }
+    }
+  },
+  "withdraw": {
+    "title": "Retirar Colateral",
+    "amount": {
+      "withdraw": "Desliza para Retirar",
+      "review": "Revisar"
+    },
+    "error": {
+      "insufficientCollateral": {
+        "title": "Colateral Insuficiente",
+        "message": "Por favor deposita más colateral."
+      },
+      "insufficientWithdrawal": {
+        "title": "Retiro Insuficiente",
+        "message": "Aumenta el monto de retiro."
+      }
+    },
+    "page": {
+      "from": "Hacia Préstamos WLD",
+      "to": "Desde Mi Billetera",
+      "status": {
+        "pending": "Retiro Pendiente",
+        "failed": "Retiro Fallido",
+        "success": "Retiro Exitoso"
+      },
+      "currency": "WORLD",
+      "transaction": {
+        "id": "ID de Transacción",
+        "copy": "Clic para copiar",
+        "noHash": "Sin hash de transacción",
+        "viewDetails": "Ver Detalles en WorldScan"
+      },
+      "actions": {
+        "tryAgain": "Intentar de Nuevo",
+        "viewPosition": "Ver Mi Salud de Posición"
+      }
+    }
+  },
+  "deposit": {
+    "title": "Depositar Colateral",
+    "amount": {
+      "available": "Disponible",
+      "deposit": "Desliza para Depositar",
+      "review": "Revisar"
+    },
+    "error": {
+      "insufficientBalance": {
+        "title": "Saldo Insuficiente",
+        "message": "Tu saldo de WLD no es suficiente."
+      },
+      "invalidAmount": {
+        "title": "Monto Inválido",
+        "message": "Por favor ingresa un monto válido."
+      }
+    },
+    "page": {
+      "from": "Desde Mi Billetera",
+      "to": "Hacia Préstamos WLD",
+      "status": {
+        "pending": "Depósito Pendiente",
+        "failed": "Depósito Fallido",
+        "success": "Depósito Exitoso"
+      },
+      "currency": "WORLD",
+      "transaction": {
+        "id": "ID de Transacción",
+        "copy": "Clic para copiar",
+        "noHash": "Sin hash de transacción",
+        "viewDetails": "Ver Detalles en WorldScan"
+      },
+      "actions": {
+        "tryAgain": "Intentar de Nuevo",
+        "viewPosition": "Ver Mi Salud de Posición"
+      }
+    }
+  }
+}
