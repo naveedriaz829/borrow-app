@@ -74,6 +74,37 @@ export default function Borrow() {
     setAmount(amt);
   }
 
+  // Validate if amount is a valid number
+  const isValidAmount = useMemo(() => {
+    // Trim whitespace
+    const trimmedAmount = amount.trim();
+    
+    // Empty or just whitespace
+    if (!trimmedAmount || trimmedAmount === "") {
+      return false;
+    }
+    
+    // Just a dot or multiple dots (like ".", "..", "...")
+    if (/^\.+$/.test(trimmedAmount)) {
+      return false;
+    }
+    
+    // Check if it's a valid decimal format (allows "123", "123.", "123.45", ".5")
+    const decimalRegex = /^\d*\.?\d*$/;
+    if (!decimalRegex.test(trimmedAmount)) {
+      return false;
+    }
+    
+    // Check if it's a valid number (converts to NaN if invalid)
+    // This catches cases like just "." which Number(".") returns NaN
+    const num = Number(trimmedAmount);
+    if (isNaN(num)) {
+      return false;
+    }
+    
+    return true;
+  }, [amount]);
+
   const calculateCollateral = useCallback(
     async (usdAmount: string) => {
       console.log("calculateCollateral: usdAmount: ", usdAmount);
@@ -125,6 +156,14 @@ export default function Borrow() {
   }, [numPad, inputElement]);
 
   function toggleReview() {
+    // Prevent navigation if amount is invalid
+    if (!isValidAmount) {
+      return;
+    }
+    const numAmount = Number(amount);
+    if (isNaN(numAmount) || numAmount < 0.001) {
+      return;
+    }
     calculateCollateral(amount);
     setNumPad(false);
     setReview(true);
@@ -166,10 +205,16 @@ export default function Borrow() {
     }
   }, [isConfirmed, isError]);
 
-  const borrowInsufficient = Number(amount) < 0.001;
+  const numAmount = useMemo(() => {
+    if (!isValidAmount) return 0;
+    const num = Number(amount);
+    return isNaN(num) ? 0 : num;
+  }, [amount, isValidAmount]);
+
+  const borrowInsufficient = numAmount < 0.001;
   const isGreaterThanMaxBorrow =
-    Number(amount) > Number(formatedMaxBorrowAmountUSD);
-  const isDisabled = borrowInsufficient || isGreaterThanMaxBorrow;
+    numAmount > Number(formatedMaxBorrowAmountUSD);
+  const isDisabled = !isValidAmount || borrowInsufficient || isGreaterThanMaxBorrow;
   if (isLoading) {
     return <FullPageLoader message={t("common.loader.borrowing")} />;
   }
@@ -243,11 +288,20 @@ export default function Borrow() {
             />
           </div>
           <span className="flex w-full text-[clamp(13px,4.2vw,17px)]">
-            <div onClick={toggleReview} className="h-[calc(7.5vh)] w-full mx-6">
+            <div 
+              onClick={() => {
+                if (!isDisabled) {
+                  toggleReview();
+                }
+              }} 
+              className="h-[calc(7.5vh)] w-full mx-6"
+            >
               <ThemePill
                 disabled={isDisabled}
                 text={
-                  isGreaterThanMaxBorrow
+                  !isValidAmount
+                    ? t("borrow.amount.insufficient")
+                    : isGreaterThanMaxBorrow
                     ? t("borrow.amount.tooHigh")
                     : borrowInsufficient
                     ? t("borrow.amount.insufficient")
