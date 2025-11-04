@@ -139,7 +139,7 @@ function InputAmount({
           inputMode="decimal"
           pattern="^\d*\.?\d{0,2}$"
           placeholder="$0.00"
-          className="caret-transparent focus:outline-none text-7xl text-center w-screen bg-transparent"
+          className="caret-white focus:outline-none text-7xl text-center w-screen bg-transparent"
         />
       </span>
 
