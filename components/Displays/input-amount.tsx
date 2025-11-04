@@ -1,7 +1,7 @@
 "use client";
 import { useMaxBorrowAmount } from "@/hooks/useMaxBorrowAmount";
 import { formatUSD } from "@/lib/format";
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import HollowThemePill from "../Buttons/hollow-theme-pill";
 import ThemePill from "../Buttons/theme-pill";
 import CircularGaugeDisplay from "./noninteractive-gauge";
@@ -20,6 +20,79 @@ function InputAmount({
   maxAmount: bigint;
 }) {
   const [selected, setSelected] = useState(0);
+  const buttonsContainerRef = useRef<HTMLDivElement>(null);
+  const inputElementRef = useRef<HTMLInputElement | null>(null);
+  const focusHandlerRef = useRef<(() => void) | null>(null);
+
+  // Function to scroll buttons into view
+  const scrollButtonsIntoView = useCallback(() => {
+    if (buttonsContainerRef.current) {
+      setTimeout(() => {
+        buttonsContainerRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "end",
+        });
+      }, 300); // Delay to allow keyboard animation
+    }
+  }, []);
+
+  // Handle keyboard visibility for Android devices using Visual Viewport API
+  useEffect(() => {
+    const handleVisualViewportChange = () => {
+      if (window.visualViewport && buttonsContainerRef.current) {
+        const viewport = window.visualViewport;
+        const windowHeight = window.innerHeight;
+        const viewportHeight = viewport.height;
+        
+        // Check if keyboard is open (viewport height is significantly less than window height)
+        const keyboardOpen = viewportHeight < windowHeight * 0.75;
+        
+        if (keyboardOpen) {
+          scrollButtonsIntoView();
+        }
+      }
+    };
+
+    // Use Visual Viewport API if available (modern browsers, especially Android)
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", handleVisualViewportChange);
+      window.visualViewport.addEventListener("scroll", handleVisualViewportChange);
+    }
+
+    // Fallback: Listen to window resize for older browsers
+    window.addEventListener("resize", handleVisualViewportChange);
+
+    return () => {
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener("resize", handleVisualViewportChange);
+        window.visualViewport.removeEventListener("scroll", handleVisualViewportChange);
+      }
+      window.removeEventListener("resize", handleVisualViewportChange);
+    };
+  }, [scrollButtonsIntoView]);
+
+  // Handle input ref callback
+  const handleInputRef = useCallback((element: HTMLInputElement | null) => {
+    // Remove old focus listener if it exists
+    if (inputElementRef.current && focusHandlerRef.current) {
+      inputElementRef.current.removeEventListener("focus", focusHandlerRef.current);
+    }
+
+    inputElementRef.current = element;
+    inputRef(element);
+    
+    // Add focus listener when element is available
+    if (element) {
+      const handleFocus = () => {
+        scrollButtonsIntoView();
+      };
+      focusHandlerRef.current = handleFocus;
+      element.addEventListener("focus", handleFocus);
+    } else {
+      focusHandlerRef.current = null;
+    }
+  }, [inputRef, scrollButtonsIntoView]);
+
   function handleSelect(percent: number) {
     if (!maxAmount) {
       return;
@@ -52,7 +125,7 @@ function InputAmount({
       <span className="flex justify-center font-['PolySans'] text-white w-screen gap-1">
         {/* <h4 className=" text-7xl z-50">$</h4> */}
         <input
-          ref={inputRef}
+          ref={handleInputRef}
           type="text"
           maxLength={10}
           value={input}
@@ -74,7 +147,7 @@ function InputAmount({
         <CircularGaugeDisplay percent={selected} />
       </button>
 
-      <div className="flex w-full">
+      <div ref={buttonsContainerRef} className="flex w-full pb-4">
         <span className="grid grid-cols-4 w-full gap-2 p-5 text-[clamp(12px,3.7vw,15px)]">
           <ToggleButton percent={25} />
           <ToggleButton percent={50} />

@@ -174,7 +174,7 @@ export default function Borrow() {
     return <FullPageLoader message={t("common.loader.borrowing")} />;
   }
   return (
-    <div className="relative no-scroll flex flex-col justify-between text-white bg-dash-gray w-full h-screen">
+    <div className={`relative flex flex-col justify-between text-white bg-dash-gray w-full h-screen ${numPad ? "overflow-y-auto" : "no-scroll"}`}>
       <div className="absolute z-20 right-[20.5px] top-[38px]">
         <BiGlobe
           onClick={() => setIsLanguageDrawerVisible(true)}
